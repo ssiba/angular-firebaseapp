@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-center">
+        <h2>REGISTER</h2>
+    </div>
+<div class="container  logintemp">
+        <div class="row">
+            <div class="col-xl-12 col-md-12">
+                <form [formGroup]="regForms">
+                        <div class="form-group">
+                                <label>User Name</label>
+                                <input type="text" class="form-control" formControlName="name"
+                                     [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
+                                    placeholder="Enter email">
+                                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                    <div *ngIf="submitted && f.name.errors.required">
+                                        Name is required
+                                    </div>
+                                </div>
+                            </div>
+                    <div class="form-group">
+                        <label>Email address</label>
+                        <input type="email" class="form-control" formControlName="email"
+                            aria-describedby="emailHelp" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+                            placeholder="Enter email">
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="submitted && f.email.errors.required">
+                                email is required
+                            </div>
+                            <div *ngIf="submitted && f.email.errors.email">
+                                give your proper email
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1"
+                            [ngClass]="{ 'is-invalid': submitted && f.password.errors}" placeholder="Password">
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="submitted && f.password.errors.required">
+                                password is required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <button type="submit" class="btn btn-primary" (click)="submit()">Submit</button>
+                        <button class="btn btn-info" routerLink="/login">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+    
+    </div>

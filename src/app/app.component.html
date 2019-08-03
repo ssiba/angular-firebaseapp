@@ -1,21 +1,45 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="nav-brand" routerLink="/dashboard">Dashboard</div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ml-auto">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a (click)="logout()" class="nav-link">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row min-vh-100">
+        <aside class="col-12 col-md-2 p-0 bg-dark">
+            <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2">
+                <div class="collapse navbar-collapse">
+                    <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
+                        <li class="nav-item">
+                            <a routerLink="/products" class="nav-link pl-0 text-nowrap">
+                                <i class="fa fa-bullseye fa-fw"></i>
+                                <span class="font-weight-bold">products</span>
+                            </a>
+                        </li>
 
-<router-outlet></router-outlet>
+                        <li class="nav-item">
+                            <a routerLink="/productlist" class="nav-link pl-0" href="#"><i
+                                    class="fa fa-heart codeply fa-fw"></i> <span class="d-none d-md-inline">Product
+                                    List</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+    </div>
+</div>
+<div class="mainWorkSpace">
+    <router-outlet></router-outlet>
+</div>
